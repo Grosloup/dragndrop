@@ -13,20 +13,89 @@
         <div class="col col-3"></div>
         <div class="col col-6">
             <ul>
-                <li draggable="true" class="draggable"><a href="">Lorem ipsum.</a></li>
-                <li draggable="true" class="draggable"><a href="">Magnam, sunt?</a></li>
-                <li draggable="true" class="draggable"><a href="">Iure, porro.</a></li>
-                <li draggable="true" class="draggable"><a href="">Laudantium, sapiente!</a></li>
-                <li draggable="true" class="draggable"><a href="">Fugit, quidem.</a></li>
-                <li draggable="true" class="draggable"><a href="">Asperiores, molestias?</a></li>
-                <li draggable="true" class="draggable"><a href="">Fuga, velit?</a></li>
-                <li draggable="true" class="draggable"><a href="">Asperiores, dolorum!</a></li>
-                <li draggable="true" class="draggable"><a href="">Alias, minus.</a></li>
-                <li draggable="true" class="draggable"><a href="">Impedit, minima.</a></li>
+                <li><a href="#" draggable="true" class="draggable" data-index="0">Lorem ipsum.</a></li>
+                <li><a href="#" draggable="true" class="draggable" data-index="1">Magnam, sunt?</a></li>
+                <li><a href="#" draggable="true" class="draggable" data-index="2">Iure, porro.</a></li>
+                <li><a href="#" draggable="true" class="draggable" data-index="3">Laudantium, sapiente!</a></li>
+                <li><a href="#" draggable="true" class="draggable" data-index="4">Fugit, quidem.</a></li>
+                <li><a href="#" draggable="true" class="draggable" data-index="5">Asperiores, molestias?</a></li>
+                <li><a href="#" draggable="true" class="draggable" data-index="6">Fuga, velit?</a></li>
+                <li><a href="#" draggable="true" class="draggable" data-index="7">Asperiores, dolorum!</a></li>
+                <li><a href="#" draggable="true" class="draggable" data-index="8">Alias, minus.</a></li>
+                <li><a href="#" draggable="true" class="draggable" data-index="9">Impedit, minima.</a></li>
             </ul>
         </div>
         <div class="col col-3"></div>
     </div>
 </div>
+
+<script>
+    (function(w,d){
+        var dragSrcElm;
+        var droppableIndex, targetIndex;
+
+        var drags = d.querySelectorAll(".draggable");
+        [].slice.call(drags).forEach(function(el){
+            el.addEventListener("dragstart", function(evt){
+                this.classList.add("dragstart");
+                dragSrcElm = this;
+                evt.dataTransfer.effectAllowed = "copy";
+                evt.dataTransfer.setData("text/html", this.innerHTML);
+                droppableIndex = this.dataset.index;
+                console.log(droppableIndex);
+                return false;
+            }, false);
+
+            el.addEventListener("dragenter", function(evt){
+                this.parentNode.classList.add("dragenter");
+                targetIndex = this.dataset.index;
+                console.log(targetIndex);
+                return false;
+            }, false);
+
+            el.addEventListener("dragover", function(evt){
+                if(evt.preventDefault){
+                    evt.preventDefault();
+                }
+                this.classList.add("dragenter");
+
+                evt.dataTransfer.dropEffect = 'copy';
+                return false;
+            }, false);
+
+            el.addEventListener("dragleave", function(evt){
+                this.parentNode.classList.remove("dragenter");
+            }, false);
+
+            el.addEventListener("drop", function(evt){
+                if(evt.preventDefault){
+                    evt.preventDefault();
+                }
+
+                if(dragSrcElm != this){
+                    //dragSrcElm.innerHTML = this.innerHTML;
+                    if(droppableIndex < targetIndex){ // sens descente
+
+                    } else { // sens montée
+
+                    }
+                    this.innerHTML = evt.dataTransfer.getData("text/html");
+                }
+                return false;
+            }, false);
+
+            el.addEventListener("dragend", function(evt){
+                //this.classList.remove("dragstart");
+                [].slice.call(drags).forEach(function(el){
+                    el.parentNode.classList.remove("dragenter");
+                    el.classList.remove("dragstart");
+                });
+                //return false;
+            }, false);
+
+
+        });
+    })(window, document);
+</script>
 </body>
 </html>

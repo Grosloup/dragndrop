@@ -19,15 +19,30 @@ a{
   outline: none;
 }
 
-[draggable]{
+[draggable="true"]{
   @include user-select("none");
-}
-li.draggable{
-  padding: 10px;
-  border: 1px solid #4877ff;
-  display: block;
-  margin-bottom: 5px;
-  background-color: #64aaff;
   cursor: move;
-  color: #fff;
+}
+li{
+  display: block;
+  width: 200px;
+  border: 2px solid transparent;
+  margin-bottom: 5px;
+  &.dragenter{
+    border: 2px dashed #4877ff;
+  }
+  a.draggable{
+    padding: 10px;
+    border: 1px solid #4877ff;
+    display: block;
+
+    background-color: #64aaff;
+    width: 196px;
+    color: #fff;
+    &.dragstart{
+      background-color: lighten(#64aaff, 10%);
+    }
+
+  }
+
 }

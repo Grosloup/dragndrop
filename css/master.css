@@ -282,19 +282,34 @@ a {
 }
 
 /* line 22, ../scss/master.scss */
-[draggable] {
+[draggable="true"] {
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
+  cursor: move;
 }
 
-/* line 25, ../scss/master.scss */
-li.draggable {
+/* line 26, ../scss/master.scss */
+li {
+  display: block;
+  width: 200px;
+  border: 2px solid transparent;
+  margin-bottom: 5px;
+}
+/* line 31, ../scss/master.scss */
+li.dragenter {
+  border: 2px dashed #4877ff;
+}
+/* line 34, ../scss/master.scss */
+li a.draggable {
   padding: 10px;
   border: 1px solid #4877ff;
   display: block;
-  margin-bottom: 5px;
   background-color: #64aaff;
-  cursor: move;
+  width: 196px;
   color: #fff;
+}
+/* line 42, ../scss/master.scss */
+li a.draggable.dragstart {
+  background-color: #97c6ff;
 }
