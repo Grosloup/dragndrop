@@ -292,7 +292,7 @@ a {
 /* line 26, ../scss/master.scss */
 li {
   display: block;
-  width: 200px;
+  width: 250px;
   border: 2px solid transparent;
   margin-bottom: 5px;
 }
@@ -306,7 +306,7 @@ li a.draggable {
   border: 1px solid #4877ff;
   display: block;
   background-color: #64aaff;
-  width: 196px;
+  width: 246px;
   color: #fff;
 }
 /* line 42, ../scss/master.scss */

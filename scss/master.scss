@@ -25,7 +25,7 @@ a{
 }
 li{
   display: block;
-  width: 200px;
+  width: 250px;
   border: 2px solid transparent;
   margin-bottom: 5px;
   &.dragenter{
@@ -37,7 +37,7 @@ li{
     display: block;
 
     background-color: #64aaff;
-    width: 196px;
+    width: 246px;
     color: #fff;
     &.dragstart{
       background-color: lighten(#64aaff, 10%);
