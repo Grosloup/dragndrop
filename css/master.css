@@ -310,6 +310,52 @@ li a.draggable {
   color: #fff;
 }
 /* line 42, ../scss/master.scss */
+li a.draggable span {
+  display: inline-block;
+  padding: 4px;
+  vertical-align: middle;
+}
+/* line 46, ../scss/master.scss */
+li a.draggable span.color-0 {
+  background-color: #ffb468;
+}
+/* line 49, ../scss/master.scss */
+li a.draggable span.color-1 {
+  background-color: #a6ffac;
+}
+/* line 52, ../scss/master.scss */
+li a.draggable span.color-2 {
+  background-color: #50d8ff;
+}
+/* line 55, ../scss/master.scss */
+li a.draggable span.color-3 {
+  background-color: #4f37ff;
+}
+/* line 58, ../scss/master.scss */
+li a.draggable span.color-4 {
+  background-color: #d139ff;
+}
+/* line 61, ../scss/master.scss */
+li a.draggable span.color-5 {
+  background-color: #ff1d70;
+}
+/* line 64, ../scss/master.scss */
+li a.draggable span.color-6 {
+  background-color: #ff2020;
+}
+/* line 67, ../scss/master.scss */
+li a.draggable span.color-7 {
+  background-color: #2cff2f;
+}
+/* line 70, ../scss/master.scss */
+li a.draggable span.color-8 {
+  background-color: #3afff8;
+}
+/* line 73, ../scss/master.scss */
+li a.draggable span.color-9 {
+  background-color: #ffc3f2;
+}
+/* line 77, ../scss/master.scss */
 li a.draggable.dragstart {
   background-color: #97c6ff;
 }
