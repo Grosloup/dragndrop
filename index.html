@@ -39,7 +39,7 @@
                     this.classList.add("dragstart");
                     dragSrcElm = this;
                     evt.dataTransfer.effectAllowed = "copy";
-                    evt.dataTransfer.setData("text/html", this.innerHTML);
+                    evt.dataTransfer.setData("text", this.innerHTML);
                     droppableIndex = parseInt(this.dataset.index);
                 return false;
             }, false);
@@ -74,7 +74,7 @@
                             drags.item(i).innerHTML = drags.item(i-1).innerHTML;
                         }
                     }
-                    this.innerHTML = evt.dataTransfer.getData("text/html");
+                    this.innerHTML = evt.dataTransfer.getData("text");
                 }
                 return false;
             }, false);
