@@ -33,7 +33,6 @@
     (function(w,d){
         var dragSrcElm;
         var droppableIndex, targetIndex;
-
         var drags = d.querySelectorAll(".draggable");
         [].slice.call(drags).forEach(function(el){
             el.addEventListener("dragstart", function(evt){
@@ -44,13 +43,11 @@
                     droppableIndex = parseInt(this.dataset.index);
                 return false;
             }, false);
-
             el.addEventListener("dragenter", function(evt){
                 this.parentNode.classList.add("dragenter");
                 targetIndex = parseInt(this.dataset.index);
                 return false;
             }, false);
-
             el.addEventListener("dragover", function(evt){
                 if(evt.preventDefault){
                     evt.preventDefault();
@@ -60,11 +57,9 @@
                 evt.dataTransfer.dropEffect = 'copy';
                 return false;
             }, false);
-
             el.addEventListener("dragleave", function(evt){
                 this.parentNode.classList.remove("dragenter");
             }, false);
-
             el.addEventListener("drop", function(evt){
                 if(evt.preventDefault){
                     evt.preventDefault();
@@ -83,17 +78,12 @@
                 }
                 return false;
             }, false);
-
             el.addEventListener("dragend", function(evt){
-                //this.classList.remove("dragstart");
                 [].slice.call(drags).forEach(function(el){
                     el.parentNode.classList.remove("dragenter");
                     el.classList.remove("dragstart");
                 });
-                //return false;
             }, false);
-
-
         });
     })(window, document);
 </script>
